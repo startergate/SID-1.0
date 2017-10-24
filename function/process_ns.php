@@ -10,5 +10,6 @@
   $upid = $_SESSION['uid'];
   $sql = "INSERT INTO sitestatements (sitename,link, pid, upid) VALUES('".$sitename."', '".$link."', '".$pid."', '".$upid."')";
   $result = mysqli_query($conn, $sql);
-  header('Location: ../index.php');
+  echo "<script>window.alert('사이트 등록이 완료되었습니다..');</script>";
+  echo "<script>window.location=('./new_site.php');</script>";
 ?>

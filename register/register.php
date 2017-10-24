@@ -38,6 +38,7 @@
       <form id='form' action="../function/process_reg.php" method="post">
         <input type="text" class="form-control" name="id" id="form-title" placeholder="ID">
         <input type="password" class="form-control" name="pw" id="form-title" placeholder="PASSWORD">
+        <input type="password" class="form-control" name="pwr" id="form-title" placeholder="PASSWORD RETRY">
         <input type="text" class="form-control" name="nickname" id="form-title" placeholder="NICKNAME">
         <input type="submit" name="name" class="btn btn-default btn-lg" value='회원가입'>
       </form>

@@ -27,6 +27,7 @@
 			echo $hash;
 		}
   } else {
-		echo 'id is a problem!';
+		echo "<script>window.alert('가입되지 않은 아이디이거나 틀린 비밀번호를 입력하셨습니다. 다시 로그인 해주세요.');</script>";
+		echo "<script>window.location=('../login/login.php');</script>";
   }
 ?>
