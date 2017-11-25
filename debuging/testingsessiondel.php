@@ -1,6 +1,7 @@
 <?php
   session_start();
-  $_SESSION['uid'] = '';
+  session_unset();
+  session_destroy();
 ?>
 <!DOCTYPE html>
 <html>
