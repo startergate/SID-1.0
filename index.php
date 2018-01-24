@@ -61,6 +61,12 @@
 							<a href="./new_site.php">신규 사이트 등록</a>
 							<br />
 							<a href="./debug.php">디버그용</a>
+							<br />
+							<?php echo "Your PID Is ".$_SESSION['pid']; ?>
+							<br />
+							<?php echo "Your Nickname Is ".$_SESSION['nickname']; ?>
+							<br />
+							<?php echo "Your Session ID Is ".session_id(); ?>
             </header>
 						<h4><strong>Copyright Info</strong></h4>
 						<div>Icons made by <a href="http://www.freepik.com" target="_blank" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" target="_blank" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>

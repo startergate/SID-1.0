@@ -1,20 +1,24 @@
 <?php
 	require('../config/config.php');
 	require('../lib/db.php');
-  //require('../lib/password.php');
+
 	$id = $_POST['id'];
-  $password = $_POST['pw'];
+  $pw_temp = $_POST['pw'];
+
 	$conn = db_init($config["host"],$config["duser"],$config["dpw"],$config["dname"]);
 	$result = mysqli_query($conn, "SELECT * FROM userdata");
 	$sql = "SELECT id,pw,nickname,pid FROM userdata WHERE id LIKE '$id' LIMIT 1";	//user data select
   $result = mysqli_query($conn, $sql);
 	$row = mysqli_fetch_assoc($result);
+
   $sqlid = $row['id'];
   $hash = $row['pw'];
 	$sqlni = $row['nickname'];
   $sqlpid = $row['pid'];
+
+	$pw = hash("sha256",$pw_temp);
   if ($id === $sqlid) {
-    if (password_verify($password, $hash)) {	//error appeared on function password_verify
+    if ($pw === $hash) {
 			session_start();
 			$_SESSION['pid'] = $sqlpid;
 			$_SESSION['nickname'] = $sqlni;

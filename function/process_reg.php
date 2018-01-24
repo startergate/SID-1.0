@@ -1,17 +1,15 @@
 <?php
   require("../config/config.php");
   require("../lib/db.php");
-  require("../lib/password.php");
   require("../lib/codegen.php");
   $conn = db_init($config["host"],$config["duser"],$config["dpw"],$config["dname"]);
 
   $id = $_POST['id'];
-  $pw = $_POST['pw'];
+  $pw_temp = $_POST['pw'];
   $pwr = $_POST['pwr'];
-  const PASSWORD_COST = ['cost'=>12];
-  $password = password_hash($pw, PASSWORD_DEFAULT, PASSWORD_COST);
+  $password = hash("sha256",$pw_temp);
   $nickname = $_POST['nickname'];
-  if ($pw == $pwr) {
+  if ($pw_temp === $pwr) {
     $pid = generateRenStr(10);
     $sql = 'INSERT INTO userdata (id,pw,nickname,pid) VALUES("'.$id.'","'.$password.'", "'.$nickname.'","'.$pid.'")';
     $result = mysqli_query($conn, $sql);

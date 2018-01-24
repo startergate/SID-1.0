@@ -6,7 +6,8 @@
   </head>
   <body>
     <?php
-     $_SESSION['pid'] = $pid;
+      echo $_SESSION['pid'];
+      $pid = $_SESSION['pid'];
       if ($pid == '') {
         echo $pid;
       } else {
