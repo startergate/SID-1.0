@@ -24,7 +24,9 @@
 	<link href="/static/img/favicon/favicon-32x32.png" rel="icon" type="image/X-icon" />
 	<title>STARTERGATE IDENTITY</title>
 	<link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="./style.css">
+	<link rel="stylesheet" type="text/css" href="./css/master.css">
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	<link rel="stylesheet" type="text/css" href="/Normalize.css">
 </head>
 	<body id="target">
 		<div class="container">
@@ -46,6 +48,7 @@
 						<header class="jumbotron text-center">
 							<h4>적용법</h4>
 							이 서비스를 적용시키려면 다음과 같은 문자열을 로그인 버튼에 form 문법으로 삽입시켜야합니다.
+							<br />
 							<div id="control">
 								<a href="./new_site.php" class="btn btn-success btn-lg">사이트 추가하기</a>
 							</div>

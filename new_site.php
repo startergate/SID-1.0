@@ -34,7 +34,9 @@
 	<link href="/static/img/favicon/favicon-32x32.png" rel="icon" type="image/X-icon" />
 	<title>STARTERGATE IDENTITY</title>
 	<link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="./style.css">
+	<link rel="stylesheet" type="text/css" href="./css/master.css">
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	<link rel="stylesheet" type="text/css" href="/Normalize.css">
 </head>
 <body id="target">
 	<div class="container">

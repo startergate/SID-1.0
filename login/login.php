@@ -3,8 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" type="text/css" href="../style.css">
     <link rel="stylesheet" href="/bootstrap-4.0b/css/bootstrap.min.css">
+  	<link rel="stylesheet" type="text/css" href="../css/master.css">
+  	<link rel="stylesheet" type="text/css" href="../css/style.css">
+  	<link rel="stylesheet" type="text/css" href="../css/bg_style.css">
+  	<link rel="stylesheet" type="text/css" href="/Normalize.css">
     <link rel="apple-touch-icon" sizes="57x57" href="/static/img/favicon/startergate_id/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/static/img/favicon/startergate_id/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="/static/img/favicon/startergate_id/apple-icon-72x72.png">
@@ -30,25 +33,27 @@
     ?>
     <title>STARTERGATE IDENTITY</title>
   </head>
-  <body>
-    <?php
-    echo $_GET['pid']
-    ?>
-    <header class="jumbotron">
-    <div id=login>로그인</div>
-    <br />
-    <div id=lotext>STARTERGATE
-    <br />
-    <strong>IDENTITY</strong>
-    <br />
-      <form id='form' action="../function/process_log.php" method="post">
-        <input type="text" class="form-control" name="id" id="form-title" placeholder="ID">
-        <input type="password" class="form-control" name="pw" id="form-title" placeholder="PASSWORD">
-        <input type="submit" name="name" class="btn btn-default btn-lg" value='로그인'>
-      </form>
+  <body id="bge">
+    <div class="covra">
+      <div class="container">
+        <?php echo $_GET['pid'];?>
+        <div id=login>로그인</div>
+        <br />
+        <div id=lotext>
+          <br />
+          <h3>STARTERGATE<strong>IDENTITY</strong></h3>
+          <br />
+          <form id='form' action="../function/process_log.php" method="post">
+            <input type="text" class="form-control" name="id" id="form-title" placeholder="아이디">
+            <input type="password" class="form-control" name="pw" id="form-title" placeholder="비밀번호">
+            <br />
+            <input type="submit" name="name" class="btn btn-light" value='로그인'>
+            <a href="../register/register.php" class="btn btn-light">회원가입</a>
+          </form>
+        </div>
+      </div>
     </div>
-  </header>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="/bootstrap/js/bootstrap.min.js"></script>
-</body>
+  </body>
 </html>
