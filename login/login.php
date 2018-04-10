@@ -26,10 +26,10 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="theme-color" content="#ffffff">
     <?php
-      $result = mysqli_query($conn, 'SELECT * FROM sitestatements');
+      /*$result = mysqli_query($conn, 'SELECT * FROM sitestatements');
       $sql = 'SELECT sitename,link,pid,upid FROM sitestatements WHERE pid = '.$_GET['pid'];
       $result = mysqli_query($conn, $sql);
-      $row = mysqli_fetch_assoc($result);
+      $row = mysqli_fetch_assoc($result);*/
     ?>
     <title>STARTERGATE IDENTITY</title>
   </head>
