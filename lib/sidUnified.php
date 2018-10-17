@@ -59,18 +59,14 @@
          }
      }
 
-     public function login($id, $pw, $auto, $conn)
+     public function login($id, $pw, $conn)
      {
          $pw = hash("sha256", $pw);
-
          $sql = "SELECT id,pw,nickname,pid FROM userdata WHERE id LIKE '$id'";	//user data select
          $result = $conn -> query($sql);
          $row = $result -> fetch_assoc();
          $sqlpid = $row['pid'];
          if ($id === $row['id'] && $pw === $row['pw']) {
-             if ($auto === "on") {
-                 $this -> loginCookie($pw, $sqlpid, $conn_n, "/donote");
-             }
              $_SESSION['pid'] = $row['pid'];
              $_SESSION['nickname'] = $row['nickname'];
              $output = 1;
