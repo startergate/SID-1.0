@@ -2,15 +2,15 @@
 <html>
 <head>
 	<?php
-	ob_start();
-	session_start();
-	$uid = $_SESSION['uid'];
-	if(empty($uid)) {
-		echo "<script>window.alert('로그인이 필요합니다.');</script>";
-		echo "<script>window.location=('./login/login.php');</script>";
-		exit;
-	}
-	?>
+      ob_start();
+      session_start();
+      $uid = $_SESSION['uid'];
+      if (empty($uid)) {
+          echo "<script>window.alert('로그인이 필요합니다.');</script>";
+          echo "<script>window.location=('./login/login.php');</script>";
+          exit;
+      }
+  ?>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">

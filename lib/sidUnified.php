@@ -5,6 +5,16 @@
   // This library follows CC BY-SA 4.0. Please refer to ( https://creativecommons.org/licenses/by-sa/4.0/ )
  class SID
  {
+     private function generateRenStr($length)
+     {
+         $character = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+         $rendom_str = "";
+         $loopNum = $length;
+         while ($loopNum--) {
+             $rendom_str .= $character[mt_rand(0, strlen($character)-1)];
+         }
+         return $rendom_str;
+     }
      public function profileGet($pid, $conn, $locater)
      {
          $sql = "SELECT profile_img FROM userdata WHERE pid LIKE '".$pid."'";
@@ -22,7 +32,7 @@
      {
          unset($_COOKIE['sidAutorizeRikka']);
          unset($_COOKIE['sidAutorizeYuuta']);
-         $cookie_raw = generateRenStr(10);
+         $cookie_raw = $this -> generateRenStr(10);
          $cookie_data = hash("sha256", $pw);
          $sql = "UPDATE userdata SET autorize_tag='$cookie_raw' WHERE pid = '$pid'";
          $result = $conn -> query($sql);
@@ -34,13 +44,13 @@
      public function authCheck()
      {
          $returnRes = 0;
-         if (!empty($_COOKIE['donoteAutorizeRikka'])) {
+         if (!empty($_COOKIE['sidAutorizeRikka'])) {
              $conn = db_init($confign["host"], $confign["duser"], $confign["dpw"], $confign["dname"]);
-             $sql = "SELECT pw,nickname,pid FROM userdata WHERE autorize_tag = '".$_COOKIE["sidAutorizeRikka"]."'";
+             $sql = "SELECT pw,nickname,pid FROM userdata WHERE autorize_tag = '".$_COOKIE['sidAutorizeRikka']."'";
              $result = $conn -> query($sql);
              $row = $result -> fetch_assoc($result);
              $pw_hash = hash('sha256', $row['pw']);
-             if ($pw_hash === $_COOKIE['donoteAutorizeYuuta']) {
+             if ($pw_hash === $_COOKIE['sidAutorizeYuuta']) {
                  $_SESSION['nickname'] = $row['nickname'];
                  $_SESSION['pid'] = $row['pid'];
                  $returnRes++;
@@ -61,6 +71,7 @@
 
      public function login($id, $pw, $conn)
      {
+         $returnRes = 0;
          $pw = hash("sha256", $pw);
          $sql = "SELECT id,pw,nickname,pid FROM userdata WHERE id LIKE '$id'";	//user data select
          $result = $conn -> query($sql);
