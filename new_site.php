@@ -41,7 +41,7 @@
 <body id="target">
 	<div class="container">
     <header class="jumbotron text-center">
-      <img src="./img/STARTERGATEIDENTITY.png" alt="STARTERGATE" class="img-rounded" id=logo \>
+      <div class="textTitle">STARTERGATEIDENTITY</div>
     </header>
 				<div class="row">
 					<div class="col-md-12">

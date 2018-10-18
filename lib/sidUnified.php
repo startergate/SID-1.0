@@ -80,10 +80,8 @@
          if ($id === $row['id'] && $pw === $row['pw']) {
              $_SESSION['pid'] = $row['pid'];
              $_SESSION['nickname'] = $row['nickname'];
-             $output = 1;
-         } else {
-             $output = 0;
+             $returnRes++;
          }
-         return $output;
+         return $returnRes;
      }
  }
