@@ -9,9 +9,9 @@
       echo $_SESSION['pid'];
       $pid = $_SESSION['pid'];
       if ($pid == '') {
-        echo $pid;
+          echo $pid;
       } else {
-        echo 'pid 세션 정보가 없습니다.';
+          echo 'pid 세션 정보가 없습니다.';
       }
     ?>
   </body>
