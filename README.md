@@ -1,4 +1,4 @@
-# STARTERGATE-Identity
+# STARTERGATE Identity 1.0
 [![StyleCI](https://github.styleci.io/repos/128193788/shield?branch=master)](https://github.styleci.io/repos/128193788)<br>
 STARTERGATE Identity is Very Simple Login System Designed for PHP Server.
 
