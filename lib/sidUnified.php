@@ -23,7 +23,7 @@
                   $eid = $this->generateRenStr(64);
               } while ($this->checkExist('error_recorder', 'eid', $eid));
 
-              $sql = "INSERT INTO error_recorder VALUES ('$eid', 255,'".$_SERVER['HTTP_HOST']." Requested Creating Invaild SID Object (Client Name Empty)"."')";
+              $sql = "INSERT INTO error_recorder VALUES ('$eid', 255,'".$_SERVER['HTTP_HOST'].' Requested Creating Invaild SID Object (Client Name Empty)'."')";
               $conn->query($sql);
 
               throw new \Exception('Requires Vaild Client Name', -1);
@@ -32,7 +32,6 @@
 
       private function __destruct()
       {
-          return;
       }
 
       // Login functions
